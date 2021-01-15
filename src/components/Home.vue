@@ -21,8 +21,8 @@
         <a-col :span="20">
           <a-card v-for="(articleInfo, index) in boardArticle[selBoard]" :key="index" :title="articleInfo.title">
             <a-button-group slot="extra">
-              <a-button v-if="articleInfo.comment >= 0" disabled="true" style="width: 100px; background: #0275d8; color: #000000;"><a-icon type="like" />100</a-button>
-              <a-button v-else disabled="true" style="width: 100px; background: #d9534f; color: #000000;"><a-icon type="dislike" />0</a-button>
+              <a-button v-if="articleInfo.comment >= 0" disabled="true" style="width: 100px; background: #0275d8; color: #000000;"><a-icon type="like" />{{ articleInfo.comment }}</a-button>
+              <a-button v-else disabled="true" style="width: 100px; background: #d9534f; color: #000000;"><a-icon type="dislike" />{{ articleInfo.comment * -1 }}</a-button>
               <a-button href="#">Generate</a-button>
               <a-button href="#">View</a-button>
               <a-button type="link" href="#">Link</a-button>
@@ -52,14 +52,14 @@ export default {
           { title: 'MT2', id: 't2', link: '/T2', comment: 10 },
           { title: 'MT3', id: 't3', link: '/T3', comment: -10 },
           { title: 'MT4', id: 't4', link: '/T4', comment: 40 },
-          { title: 'MT5', id: 't5', link: '/T5', commnet: -100 }
+          { title: 'MT5', id: 't5', link: '/T5', comment: -100 }
         ],
         Stock: [
-          { title: 'T1', id: 't1', link: '/T1' },
-          { title: 'T2', id: 't2', link: '/T2' },
-          { title: 'T3', id: 't3', link: '/T3' },
-          { title: 'T4', id: 't4', link: '/T4' },
-          { title: 'T5', id: 't5', link: '/T5' }
+          { title: 'T1', id: 't1', link: '/T1', comment: 0 },
+          { title: 'T2', id: 't2', link: '/T2', comment: 20 },
+          { title: 'T3', id: 't3', link: '/T3', comment: 80 },
+          { title: 'T4', id: 't4', link: '/T4', comment: -10 },
+          { title: 'T5', id: 't5', link: '/T5', comment: -10 }
         ]
       }
     }
